@@ -9,11 +9,14 @@ tele_ = Telegraph()
 
 async def converse(bot, chat_id: Union[int, str], msg_id: int, user_id: int):
     resp = None
+    num = 1
     while resp is None:
         await asyncio.sleep(0.5)
+        msg_ = msg_id + num
         try:
-            resp = await bot.get_messages(chat_id, int(msg_id + 1))
-        except:
+            resp = await bot.get_messages(chat_id, msg_)
+        except BaseException:
+            num += 1
             resp = None
     return resp
 
