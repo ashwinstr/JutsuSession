@@ -9,7 +9,7 @@ from pyrogram import Client
 tele_ = Telegraph()
 
 
-async def conv(_, chat_id: Union[int, str], msg_id: int, user_id: int):
+async def conv(bot, chat_id: Union[int, str], msg_id: int, user_id: int):
     resp = None
     num = 1
     while True:
