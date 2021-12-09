@@ -19,6 +19,7 @@ async def session_(bot, message):
             msg_id=start_id.message_id,
             user_id=user_,
         )
+        await bot.send_message(user_, app_id)
         APP_ID = int(app_id.text)
         if not isinstance(APP_ID, int) or len(APP_ID):
             return await bot.send_message(user_, "The APP_ID must be a 7 digit number. Please try again with /start.")

@@ -17,7 +17,7 @@ async def conv(bot, chat_id: Union[int, str], msg_id: int, user_id: int):
             resp = await bot.get_messages(chat_id, msg_)
         except BaseException:
             num += 1
-        if resp and resp.from_user.id == user_id:
+        if resp:
             break
     return resp
 
