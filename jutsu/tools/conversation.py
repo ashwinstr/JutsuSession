@@ -10,7 +10,7 @@ async def conv(bot: Client, chat_id: Union[int, str], msg_id: int, mark_read: bo
         await asyncio.sleep(0.1)
         try:
             resp = await bot.get_messages(chat_id, (msg_id + 1))
-            await bot.send_read_acknowledge()
+            await bot.send_read_acknowledge(chat_id, (msg_id + 1))
         except:
             pass
         if resp:
