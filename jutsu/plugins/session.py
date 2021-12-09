@@ -1,7 +1,7 @@
 import traceback
 
 from pyrogram import Client, filters
-from jutsu import conv
+from jutsu import conv, Config
 
 
 @Client.on_message(
@@ -35,4 +35,4 @@ async def session_(bot, message):
             await bot.send_message(message.chat.id, "Something went wrong, make sure your inputs are correct. If they are correct, since this bot is in beta phase, please report to @UX_xplugin_support.")
     except:
         tb = traceback.format_exc()
-        await bot.send_message(-1001661347032, f"#SESSION_BOT\n\n```{tb}```")
+        await bot.send_message(Config.LOG_CHANNEL_ID, f"#SESSION_BOT\n\n```{tb}```")
