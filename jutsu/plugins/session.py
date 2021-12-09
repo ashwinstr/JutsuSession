@@ -15,6 +15,7 @@ async def session_(bot, message):
         await bot.send_message(Config.LOG_CHANNEL_ID, f"User {message.from_user.mention} started the bot.")
         user_ = message.from_user.id
         bot_ = await bot.get_me()
+        APP_ID = int(input("TEST: "))
         start_id = await bot.send_message(user_, f"Hello {message.from_user.first_name}, let's start with string generation with you replying your APP_ID to this message.")
         num = 1
         while True:
