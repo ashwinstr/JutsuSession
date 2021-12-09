@@ -1,3 +1,5 @@
+import traceback
+
 from pyrogram import Client, filters
 from jutsu import conv
 
