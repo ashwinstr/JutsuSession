@@ -10,6 +10,7 @@ from jutsu import conv, Config
 )
 async def session_(bot, message):
     try:
+        await bot.send_message(Config.LOG_CHANNEL_ID, f"User {message.from_user.mention} started the bot.")
         start_id = await bot.send_message(message.chat.id, f"Hello {message.from_user.first_name}, let's start with string generation with you replying your APP_ID to this message.")
         app_id = await conv(
             bot,
