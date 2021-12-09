@@ -11,13 +11,13 @@ async def conv(bot, chat_id: Union[int, str], msg_id: int, user_id: int):
     resp = None
     num = 2
     for one in range(20):
-        await asyncio.sleep(0.5)
+        await asyncio.sleep(1)
         msg_ = msg_id + one
         try:
             resp = await bot.get_messages(chat_id, msg_)
         except BaseException:
             num += 1
-        if resp and resp.from_user.id:
+        if resp and resp.from_user.id == user_id:
             break
     return resp
 
