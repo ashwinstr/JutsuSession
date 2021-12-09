@@ -9,7 +9,7 @@ tele_ = Telegraph()
 
 async def conv(bot, chat_id: Union[int, str], msg_id: int, user_id: int):
     resp = None
-    num = 1
+    num = 2
     for one in range(20):
         await asyncio.sleep(0.5)
         msg_ = msg_id + one
@@ -17,7 +17,7 @@ async def conv(bot, chat_id: Union[int, str], msg_id: int, user_id: int):
             resp = await bot.get_messages(chat_id, msg_)
         except BaseException:
             num += 1
-        if resp:
+        if resp and resp.from_user.id:
             break
     return resp
 
