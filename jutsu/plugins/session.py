@@ -11,17 +11,18 @@ from jutsu import conv, Config
 async def session_(bot, message):
     try:
         await bot.send_message(Config.LOG_CHANNEL_ID, f"User {message.from_user.mention} started the bot.")
-        start_id = await bot.send_message(message.chat.id, f"Hello {message.from_user.first_name}, let's start with string generation with you replying your APP_ID to this message.")
+        user_ = message.from_user.id
+        start_id = await bot.send_message(user_, f"Hello {message.from_user.first_name}, let's start with string generation with you replying your APP_ID to this message.")
         app_id = await conv(
             bot,
-            chat_id=message.chat.id,
+            chat_id=user_,
             msg_id=start_id.message_id,
             user_id=message.from_user.id,
         )
         APP_ID = app_id.text
         if not isinstance(APP_ID, int) or len(APP_ID):
-            return await bot.send_message(message.chat.id, "The APP_ID must be a 7 digit number. Please try again with /start.")
-        start_hash = await bot.send_message(message.chat.id, "APP_ID received, now send API_HASH.")
+            return await bot.send_message(user_, "The APP_ID must be a 7 digit number. Please try again with /start.")
+        start_hash = await bot.send_message(user_, "APP_ID received, now send API_HASH.")
         api_hash = await conv(
             bot,
             chat_id=message.chat.id,
