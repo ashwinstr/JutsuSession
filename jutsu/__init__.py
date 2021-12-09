@@ -1,2 +1,2 @@
-from jutsu.tools.conversation import conv
+from jutsu.tools.helpers import conv, telegrapher
 from jutsu.config import Config

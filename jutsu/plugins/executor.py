@@ -8,7 +8,7 @@ import asyncio
 from getpass import getuser
 from os import geteuid
 from pyrogram import Client, filters
-from jutsu.helpers import telegrapher
+from jutsu import telegrapher
 
 
 @Client.on_message(
