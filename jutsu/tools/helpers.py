@@ -7,7 +7,7 @@ from telegraph import Telegraph
 tele_ = Telegraph()
 
 
-async def converse(bot, chat_id: Union[int, str], msg_id: int, user_id: int):
+async def conv(bot, chat_id: Union[int, str], msg_id: int, user_id: int):
     resp = None
     num = 1
     while resp is None:
@@ -21,12 +21,12 @@ async def converse(bot, chat_id: Union[int, str], msg_id: int, user_id: int):
     return resp
 
 
-async def conv(bot, chat_id, msg_id, user_id):
+""" async def conv(bot, chat_id, msg_id, user_id):
     try:
         response = await asyncio.wait_for(converse(bot, chat_id, msg_id, user_id), timeout=15)
         return response
     except asyncio.TimeoutError:
-        return "Timeout"
+        return "Timeout" """
 
 
 def telegrapher(a_title: str, content: str) -> str:
