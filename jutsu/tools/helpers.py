@@ -10,7 +10,7 @@ tele_ = Telegraph()
 async def conv(bot, chat_id: Union[int, str], msg_id: int, user_id: int):
     resp = None
     num = 2
-    for one in range(20):
+    for one in range(1, 21):
         await asyncio.sleep(1)
         msg_ = msg_id + one
         try:
