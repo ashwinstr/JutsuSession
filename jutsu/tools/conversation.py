@@ -3,7 +3,7 @@ import asyncio
 
 from typing import Union
 
-from pyrogram import filters, CLient
+from pyrogram import filters, Client
 
 async def conv(bot, chat_id: Union[int, str], msg_id: int, user_id: int):
     while True:
