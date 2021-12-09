@@ -4,9 +4,8 @@ import asyncio
 from typing import Union
 
 from pyrogram import filters, CLient
-from pyrogram.filters import FIlter
 
-async def conv(bot: Client, chat_id: Union[int, str], msg_id: int, mark_read: bool=True, filters: user_id):
+async def conv(bot: Client, chat_id: Union[int, str], msg_id: int, mark_read: bool=True, user_id: int):
     while True:
         await asyncio.sleep(0.1)
         try:
