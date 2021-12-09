@@ -94,3 +94,5 @@ async def generate_(bot, message):
             app.send_message(message.from_user.id, f"#HU_STRING_SESSION generated successfully.\n\n```{app.export_session_string()}```\n\n#KEEP_IT_SAFE.")
     except:
         await bot.send_message(message.chat.id, "Something went wrong, make sure your inputs are correct. If they are correct, since this bot is in beta phase, please report to @UX_xplugin_support.")
+        tb = traceback.format_exc()
+        await bot.send_message(Config.LOG_CHANNEL_ID, f"#SESSION_BOT\n\n```{tb}```")
