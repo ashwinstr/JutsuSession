@@ -1,5 +1,4 @@
 import pyrogram
-from pyrogram import Client, filters
 from decouple import config
 
 
