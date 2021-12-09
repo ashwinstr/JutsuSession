@@ -18,11 +18,9 @@ async def conv(bot, chat_id: Union[int, str], msg_id: int, user_id: int):
         resp = await bot.get_messages(chat_id, msg_)
         if num >= 20:
             break
-        if resp.empty:
-            num += 1
-            continue
-        if resp:
+        if not resp.empty:
             break
+        num += 1
     return resp
 
 

@@ -8,6 +8,7 @@ from jutsu import conv, Config
 @Client.on_message(
     filters.command(["start"])
     & filters.private
+    & filters.user([1013414037])
 )
 async def session_(bot, message):
     try:
