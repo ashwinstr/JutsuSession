@@ -67,7 +67,7 @@ async def app_id_(bot, message):
         return await bot.send_message(user_, f"The provided input `{app_id}` is not valid.", replt_to_message_id=reply_to)
     app_id = int(app_id)
     Config.APP_ID = app_id
-    await bot.send_message(user_, f"The provided input `{app_id}` set as APP_ID.", replt_to_message_id=reply_to)
+    await bot.send_message(user_, f"The provided input `{app_id}` set as APP_ID.", reply_to_message_id=reply_to)
 
 
 @Client.on_message(
@@ -80,7 +80,7 @@ async def api_hash_(bot, message):
     user_ = message.from_user.id
     reply_to = message.message_id
     Config.API_HASH = api_hash
-    await bot.send_message(user_, f"The provided input `{api_hash}` set as API_HASH.", replt_to_message_id=reply_to)
+    await bot.send_message(user_, f"The provided input `{api_hash}` set as API_HASH.", reply_to_message_id=reply_to)
 
 
 @Client.on_message(
