@@ -15,11 +15,7 @@ async def conv(_, chat_id: Union[int, str], msg_id: int, user_id: int):
     while True:
         await asyncio.sleep(1)
         msg_ = msg_id + num
-        try:
-            resp = await bot.get_messages(chat_id, msg_)
-        except BaseException:
-            num += 1
-            continue
+        resp = await bot.get_messages(chat_id, msg_)
         if num >= 20:
             break
         if resp.empty:
