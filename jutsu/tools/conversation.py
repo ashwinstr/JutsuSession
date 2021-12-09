@@ -14,6 +14,7 @@ async def conv(bot, chat_id: Union[int, str], msg_id: int, user_id: int):
         except:
             pass
         if resp:
+            await bot.send_message()
             if resp.from_user.id == user_id:
                 break
     return resp
