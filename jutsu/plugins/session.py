@@ -12,9 +12,10 @@ async def session_(bot, message):
     try:
         await bot.send_message(Config.LOG_CHANNEL_ID, f"User {message.from_user.mention} started the bot.")
         user_ = message.from_user.id
+        bot = await bot.get_me()
         start_id = await bot.send_message(user_, f"Hello {message.from_user.first_name}, let's start with string generation with you replying your APP_ID to this message.")
         app_id = await conv(
-            chat_id=user_,
+            chat_id=bot.username,
             msg_id=start_id.message_id,
             user_id=user_,
         )

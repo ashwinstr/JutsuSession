@@ -20,6 +20,8 @@ async def conv(_, chat_id: Union[int, str], msg_id: int, user_id: int):
         except BaseException:
             num += 1
             continue
+        if num >= 20:
+            break
         if resp.empty:
             num += 1
             continue
