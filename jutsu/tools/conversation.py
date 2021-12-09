@@ -5,7 +5,7 @@ from typing import Union
 
 from pyrogram import filters, CLient
 
-async def conv(bot: Client, chat_id: Union[int, str], msg_id: int, mark_read: bool=True, user_id: int):
+async def conv(bot, chat_id: Union[int, str], msg_id: int, mark_read: bool=True, user_id: int):
     while True:
         await asyncio.sleep(0.1)
         try:
