@@ -20,7 +20,7 @@ async def converse(bot, chat_id: Union[int, str], msg_id: int, user_id: int):
 
 async def conv(bot, chat_id, msg_id, user_id):
     try:
-        response = await asyncio.wait_for(await converse(bot, chat_id, msg_id, user_id), timeout=15)
+        response = await asyncio.wait_for(converse(bot, chat_id, msg_id, user_id), timeout=15)
         return response
     except asyncio.TimeoutError:
         return "Timeout"
