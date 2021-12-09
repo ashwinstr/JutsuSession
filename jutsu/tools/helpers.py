@@ -19,7 +19,7 @@ async def conv(bot, chat_id: Union[int, str], msg_id: int, user_id: int):
             num += 1
         if resp:
             break
-    return resp
+    return resp, msg_
 
 
 """ async def conv(bot, chat_id, msg_id, user_id):

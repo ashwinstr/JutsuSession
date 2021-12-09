@@ -13,13 +13,13 @@ async def session_(bot, message):
         await bot.send_message(Config.LOG_CHANNEL_ID, f"User {message.from_user.mention} started the bot.")
         user_ = message.from_user.id
         start_id = await bot.send_message(user_, f"Hello {message.from_user.first_name}, let's start with string generation with you replying your APP_ID to this message.")
-        app_id = await conv(
+        app_id, msg_ = await conv(
             bot,
             chat_id=user_,
             msg_id=start_id.message_id,
             user_id=user_,
         )
-        await bot.send_message(user_, app_id)
+        await bot.send_message(user_, f"{app_id}\n\n{msg_}")
         APP_ID = int(app_id.text)
         if not isinstance(APP_ID, int) or len(APP_ID):
             return await bot.send_message(user_, "The APP_ID must be a 7 digit number. Please try again with /start.")
