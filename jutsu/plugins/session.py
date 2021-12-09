@@ -17,7 +17,7 @@ async def session_(bot, message):
             bot,
             chat_id=user_,
             msg_id=start_id.message_id,
-            user_id=message.from_user.id,
+            user_id=user_,
         )
         APP_ID = int(app_id.text)
         if not isinstance(APP_ID, int) or len(APP_ID):
