@@ -90,8 +90,8 @@ async def api_hash_(bot, message):
 )
 async def generate_(bot, message):
     try:
-        with Client(":memeory:", api_id=int(Config.APP_ID), api_hash=Config.API_HASH) as app:
-            await app.send_message(message.from_user.id, f"#HU_STRING_SESSION generated successfully.\n\n```{await app.export_session_string()}```\n\n#KEEP_IT_SAFE.")
+        async with Client(":memeory:", api_id=int(Config.APP_ID), api_hash=Config.API_HASH) as jutsu:
+            await jutsu.send_message(message.from_user.id, f"#HU_STRING_SESSION generated successfully.\n\n```{await jutsu.export_session_string()}```\n\n#KEEP_IT_SAFE.")
     except:
         await bot.send_message(message.chat.id, "Something went wrong, make sure your inputs are correct. If they are correct, since this bot is in beta phase, please report to @UX_xplugin_support.")
         tb = traceback.format_exc()
