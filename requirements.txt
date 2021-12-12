@@ -2,4 +2,5 @@ gitpython
 heroku3
 python-decouple
 pyrogram==1.2.11
+pyromod
 TgCrypto
